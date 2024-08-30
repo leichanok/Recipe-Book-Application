@@ -1,0 +1,24 @@
+html {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+div.content {
+    padding-top: 3.5em;
+}
+
+a {
+    font-family: var(--menu-item-font-family, inherit);
+    font-size: var(--menu-item-font-size, inherit);
+    text-decoration: var(--menu-item-text-decoration, inherit);
+    color: var(--menu-item-color, inherit)
+}
+
+a:hover {
+    color: var(--menu-item-hover-color, inherit);
+}

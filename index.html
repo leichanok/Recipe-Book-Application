@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.cdnfonts.com/css/bebas-note" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="./styles/global.css">
+        <title>Cooking book</title>
+    </head>
+    <body>
+        <script type="module" src="components.js"></script>
+
+        <menu-bar>
+            <li slot="menu-item"><a is="route-anchor"
+                    href="/about">About</a></li>
+            <li slot="menu-item"><a is="route-anchor"
+                    href="/recipes">Recipes</a></li>
+            <li slot="menu-item"><a is="route-anchor" href="/add-recipe">Add
+                    recipe</a></li>
+        </menu-bar>
+        <div class="content">
+            <route-view route-path="/about$">
+                <section id="about">About</section>
+            </route-view>
+            <route-view route-path="/recipes$">
+                <recipes-page></recipes-page>
+            </route-view>
+            <route-view route-path="/recipes/(id_\d+)$">
+                <recipes-details></recipes-details>
+            </route-view>
+            <route-view route-path="/add-recipe$">
+                <section id="add-recipe">
+                    <div class="double-splitter-container">
+                        <div>
+                            <section class="add-recipe-about">
+                                <div class="title">About</div>
+                                <label for="recipe-name">Name</label>
+                                <input type="text" id="recipe-name">
+                                <label
+                                    for="recipe-description">Description</label>
+                                <input type="text" id="recipe-description">
+                                <label for="recipe-notes">Recipe notes</label>
+                                <input type="text" id="recipe-notes">
+                                <label for="recipe-tags">Tags</label>
+                                <div id="recipe-tags" class="tags">
+                                    <div class="tag">Appetizers</div>
+                                    <div class="tag">Asian</div>
+                                    <div class="tag">Baked Goods</div>
+                                </div>
+                            </section>
+                        </div>
+                        <div>
+                            <section
+                                class="add-recipe-ingredients">Ingredients</section>
+                            <section
+                                class="add-recipe-instructions">Instructions</section>
+                        </div>
+                    </div>
+                </section>
+                <div class="background"></div>
+                <div class="add-recipe-tag">
+                    <div class="header">
+                        <h3>Create a recipe tag</h3>
+                        <p>
+                            Create a new unique tag to arrange your recipes by:
+                        </p>
+                    </div>
+                    <input type="search">
+                    <button>Add tag</button>
+                </div>
+            </route-view>
+        </div>
+    </body>
+</html>
